@@ -1,4 +1,3 @@
-// lib/mongodb.ts
 import { MongoClient, MongoClientOptions } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
@@ -9,7 +8,6 @@ if (!uri) {
   );
 }
 
-// Optional: hide password from logs
 const sanitizedUri = uri.replace(/:\/\/.*@/, "://***:***@");
 console.log("Attempting to connect to MongoDB Atlas:", sanitizedUri);
 
@@ -22,7 +20,6 @@ const options: MongoClientOptions = {
 let client: MongoClient;
 let clientPromise: Promise<MongoClient>;
 
-// Development: reuse connection across hot reloads
 if (process.env.NODE_ENV === "development") {
   const globalWithMongo = global as typeof globalThis & {
     _mongoClientPromise?: Promise<MongoClient>;
@@ -42,9 +39,7 @@ if (process.env.NODE_ENV === "development") {
       });
   }
   clientPromise = globalWithMongo._mongoClientPromise;
-}
-// Production: fresh connection
-else {
+} else {
   client = new MongoClient(uri, options);
   clientPromise = client
     .connect()
