@@ -1,4 +1,4 @@
-import { CheckCircle, Upload } from "lucide-react";
+import { CheckCircle, Upload, X } from "lucide-react";
 import { useState } from "react";
 import { UseFormRegister } from "react-hook-form";
 
