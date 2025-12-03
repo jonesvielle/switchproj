@@ -4,5 +4,10 @@
       "path": "/api/stats",
       "schedule": "0 */2 * * *"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "DISABLE_ESLINT_PLUGIN": "true"
+    }
+  }
 }
