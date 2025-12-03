@@ -72,7 +72,7 @@ function FileInput({ register, error }: FileInputProps) {
               <X className="w-5 h-5 text-gray-600" />
             </button>
 
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               {preview ? (
                 <img
                   src={preview}
@@ -85,8 +85,8 @@ function FileInput({ register, error }: FileInputProps) {
                 </div>
               )}
 
-              <div className="flex-1">
-                <p className="text-sm font-medium text-gray-800 truncate max-w-xs">
+              <div className="flex-1 flex-wrap w-full">
+                <p className="text-sm font-medium text-gray-800 break-words w-full whitespace-normal">
                   {fileName}
                 </p>
                 <p className="text-xs text-green-600 font-semibold flex items-center gap-1 mt-1">

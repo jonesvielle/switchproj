@@ -24,7 +24,7 @@ export default function Header() {
                 priority
                 className="transition-transform group-hover:scale-105 w-20 sm:w-24 md:w-28"
               />
-              <div className="hidden lg:block">
+              <div className="block">
                 <p className="text-xs font-light tracking-wider uppercase opacity-80">
                   Powered by
                 </p>
@@ -79,13 +79,21 @@ export default function Header() {
 
           <div className="relative ml-auto w-full max-w-xs bg-gradient-to-b from-quickblue to-indigo-900 shadow-2xl">
             <div className="flex items-center justify-between p-6 border-b border-white/20">
-              <Image
-                src={Logo}
-                alt="Quickteller"
-                width={90}
-                height={60}
-                priority
-              />
+              <div>
+                <Image
+                  src={Logo}
+                  alt="Quickteller"
+                  width={90}
+                  height={60}
+                  priority
+                />{" "}
+                <div className="block">
+                  <p className="text-xs font-light tracking-wider uppercase opacity-80">
+                    Powered by
+                  </p>
+                  <p className="text-lg font-bold tracking-wide">Interswitch</p>
+                </div>
+              </div>
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-2 rounded-lg hover:bg-white/10 transition"
